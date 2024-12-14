@@ -216,8 +216,9 @@ jobs:
             find ./bin/targets/ -type f -exec mv -f {} ./upload/ \;
           fi
 
+
       - name: Release Firmware
-        uses: softprops/action-gh-release@master
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{env.WRT_TARGET}}_${{env.WRT_VER}}_${{env.WRT_DATE}}
           files: ./wrt/upload/*.*
@@ -226,9 +227,10 @@ jobs:
             请注意选择你需要的设备固件！
             不要问，刷就完事了！
 
-            MTK和QCA全系带开源硬件加速，别问了！
+            全系带开源硬件加速，别问了！
 
-            WIFI密码：12345678
+            WIFI名称：${{env.WRT_SSID}}
+            WIFI密码：${{env.WRT_WORD}}
 
             源码：${{env.WRT_REPO}}
             分支：${{env.WRT_BRANCH}}

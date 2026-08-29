@@ -67,6 +67,16 @@ UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
 
 UPDATE_PACKAGE "lazyoop" "lazyoop/networking-artifact" "main"
 
+UPDATE_PACKAGE "passwall" "kenzok8/small" "master" "pkg"
+UPDATE_PACKAGE "xray-core"   "kenzok8/small"  "master" "pkg"
+
+UPDATE_PACKAGE "store"   "kenzok8/small-package"  "main" "pkg"
+
+UPDATE_PACKAGE "sing-box"   "VIKINGYFY/packages"  "main" "pkg"
+UPDATE_PACKAGE "luci-app-homeproxy"   "VIKINGYFY/packages"  "main" "pkg"
+
+
+
 if [[ $WRT_REPO != *"immortalwrt"* ]]; then
 	UPDATE_PACKAGE "qmi-wwan" "immortalwrt/wwan-packages" "master" "pkg"
 fi

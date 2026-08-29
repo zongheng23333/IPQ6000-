@@ -151,9 +151,12 @@ jobs:
       - name: Update Feeds
         run: |
           cd ./wrt/
+          sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
 
           ./scripts/feeds update -a
           ./scripts/feeds install -a
+          rm -rf feeds/packages/lang/golang
+          git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
 
       - name: Custom Packages
         run: |
